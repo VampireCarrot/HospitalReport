@@ -7,7 +7,6 @@ import android.widget.RelativeLayout;
 
 import com.bsoft.hs.R;
 import com.bsoft.hs.base.BaseActivity;
-import com.bsoft.hs.utils.ToastUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -43,17 +42,8 @@ public class HomeActivity extends BaseActivity<HomeContract.Presenter> implement
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         this.createPresenter(new HomePresenter(this,this));
-        setHomebackGround();
         presenter.setBack(R.drawable.icon_mbk);
     }
-
-    /**
-     * 高斯模糊背景
-     */
-    private void setHomebackGround() {
-
-    }
-
     @Override
     public void hideLoading() {
 
@@ -63,6 +53,5 @@ public class HomeActivity extends BaseActivity<HomeContract.Presenter> implement
     @Override
     public void showBack(BitmapDrawable drawable) {
         llBack.setBackground(drawable);
-        ToastUtils.showShort("点击了");
     }
 }
